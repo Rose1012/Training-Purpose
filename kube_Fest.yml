@@ -1,0 +1,22 @@
+env:
+   - name: Name
+     value: Roshni Chowhan
+
+kind: Pod                              
+apiVersion: v1                     
+metadata:                           
+  name: testpod                  
+spec:                                    
+  containers:                      
+    - name: con_00                     
+      image: ubuntu              
+      command: ["/bin/bash", "-c", "while true; do echo Hello Roshni, This is a K8S Demo Manifest file; sleep 5 ; done"]
+    - name: con_01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello Rose, This is second K8s Demo Manifest file; sleep 5; done"
+    - name: con_002
+      image: httpd
+      ports:
+        - containerPort: 80
+  restartPolicy: Never         # Defaults to Always
+
